@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  kong:
+    image: kong:latest
+    environment:
+      - KONG_DATABASE=off
+      - KONG_DECLARATIVE_CONFIG=/usr/local/kong/declarative.yml
+      - KONG_PROXY_LISTEN=0.0.0.0:8000
+      - KONG_ADMIN_LISTEN=0.0.0.0:8001
+    ports:
+      - "8000:8000" # Proxy Port
+      - "8001:8001" # Admin API Port
+    volumes:
+      - ./kong/declarative.yml:/usr/local/kong/declarative.yml

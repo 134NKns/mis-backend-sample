@@ -1,0 +1,23 @@
+_format_version: "3.0"
+
+services:
+  - name: service1
+    url: http://host.docker.internal:3001
+    routes:
+      - name: route1
+        paths:
+          - /service1
+
+  - name: service2
+    url: http://host.docker.internal:3002
+    routes:
+      - name: route2
+        paths:
+          - /service2
+
+  - name: service3
+    url: http://host.docker.internal:3003
+    routes:
+      - name: route3
+        paths:
+          - /service3
